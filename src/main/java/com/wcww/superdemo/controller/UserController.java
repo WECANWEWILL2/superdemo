@@ -31,7 +31,7 @@ public class UserController {
         User user = userDao.getUserByUsername(username);
         if (user != null) {
             if (user.getPassword().equals(password)) {
-                session.setAttribute("user",user);
+                session.setAttribute("user", user);
                 return "redirect:/index";
             } else {
                 modelMap.addAttribute("message", "密码错误");
@@ -43,6 +43,7 @@ public class UserController {
         }
 
     }
+
     @RequestMapping(path = "/user/register", method = RequestMethod.GET)
     public String register() {
         return "register";
@@ -61,19 +62,20 @@ public class UserController {
                                  @RequestParam("recommender") String recommender,
                                  @RequestParam("industryClub") String industryClub,
                                  @RequestParam("specialCommittee") String specialCommittee
-                                 ) {
+    ) {
         User user = userDao.getUserByUsername(username);
-        if(user!=null){
+        if (user != null) {
             modelMap.addAttribute("message", "用户名已存在");
             return "register";
-        }else {
+        } else {
             int uid = userDao.insert(new User());
-            if(uid<=0){
+            if (uid <= 0) {
                 modelMap.addAttribute("message", "数据库错误");
                 return "register";
-            }else{
-                session.setAttribute("user",user);
+            } else {
+                session.setAttribute("user", user);
                 return "redirect:/index";
             }
         }
+    }
 }
