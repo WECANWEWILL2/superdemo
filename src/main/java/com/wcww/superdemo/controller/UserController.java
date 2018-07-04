@@ -3,6 +3,7 @@ package com.wcww.superdemo.controller;
 import com.wcww.superdemo.dao.UserDao;
 import com.wcww.superdemo.entity.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
