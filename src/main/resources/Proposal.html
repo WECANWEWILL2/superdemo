@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>提案列表</title>
+    <style>
+        .table-center{
+            margin-top: 40px;
+            margin-left:40px;
+            margin-right:40px;
+        }
+        .button-control{
+            margin-top:40px;
+            margin-left:40px;
+        }
+        .button-settings{
+            background-color: blue;
+            color:white;
+        }
+    </style>
 </head>
-
-<body class="text-center">
+<body>
 <nav class="navbar navbar-light bg-light">
     <a >提案列表</a>
 </nav>
-<table width="100%" border="1">
+
+<div class="table-center">
+<table border="1">
         <tr>
             <th>全选</th>
             <th>编号</th>
@@ -23,16 +39,30 @@
 
     <tr>
         <td><input type="checkbox"></td>
-        <td>111</td>
-        <th>aaa</th>
-        <th>cc</th>
-        <th>20181219</th>
+        <th>1</th>
+        <th>报告</th>
+        <th>王华</th>
+        <th>20180721</th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
     </tr>
 
+    <tr>
+        <td><input type="checkbox"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+    </tr>
 </table>
-
+</div>
+<div class="button-control">
+<button class="button-settings">打印</button>
+<button class="button-settings">撤销</button>
+</div>
 </body>
 </html>
