@@ -4,28 +4,41 @@
     <meta charset="UTF-8">
     <title>提案列表</title>
     <style>
-        .table-center{
-            margin-top: 40px;
-            margin-left:40px;
-            margin-right:40px;
-        }
         .button-control{
             margin-top:40px;
-            margin-left:40px;
+            margin-left:250px;
         }
         .button-settings{
-            background-color: blue;
+            background-color: #42a4ff;
             color:white;
         }
+        .green-box{
+            border-style: solid;
+            border-color: grey;
+            background-color: #c8ffda;
+            border-width: 1px;
+            text-align: left;
+        }
+
+        body{
+            border-color:grey;
+            border-style: solid;
+            border-width:1px;
+        }
+        .whole-control{
+            margin-top: 40px;
+            margin-bottom:200px;
+        }
+
     </style>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
+<div class="green-box">
     <a >提案列表</a>
-</nav>
-
-<div class="table-center">
-<table border="1">
+</div>
+<div class="whole-control">
+<div>
+    <table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
         <tr>
             <th>全选</th>
             <th>编号</th>
@@ -47,22 +60,13 @@
         <th>1</th>
         <th>2</th>
     </tr>
-
-    <tr>
-        <td><input type="checkbox"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-        <td><input type="text"></td>
-    </tr>
 </table>
 </div>
+
 <div class="button-control">
 <button class="button-settings">打印</button>
 <button class="button-settings">撤销</button>
+</div>
 </div>
 </body>
 </html>
