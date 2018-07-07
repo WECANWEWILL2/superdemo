@@ -44,38 +44,26 @@ public class UserController {
 
     }
 
-    @RequestMapping(path = "/user/register", method = RequestMethod.GET)
+    @RequestMapping(path = "/user/signup", method = RequestMethod.GET)
     public String register() {
-        return "register";
+        return "signup";
     }
 
-    @RequestMapping(path = "/user/register", method = RequestMethod.POST)
+    @RequestMapping(path = "/user/signup", method = RequestMethod.POST)
     public String registerAction(ModelMap modelMap,
                                  HttpSession session,
                                  @RequestParam("username") String username,
                                  @RequestParam("password") String password,
                                  @RequestParam("name") String name,
                                  @RequestParam("sex") String sex,
-                                 @RequestParam("birth") String birth,
-                                 @RequestParam("homeAddress") String homeAdress,
-                                 @RequestParam("telephone") String telephone,
+                                 @RequestParam("birth") int birth,
+                                 @RequestParam("homeAddress") String homeAddress,
+                                 @RequestParam("telephone") int telephone,
                                  @RequestParam("recommender") String recommender,
-                                 @RequestParam("industryClub") String industryClub,
-                                 @RequestParam("specialCommittee") String specialCommittee
-    ) {
-        User user = userDao.getUserByUsername(username);
-        if (user != null) {
-            modelMap.addAttribute("message", "用户名已存在");
-            return "register";
-        } else {
-            int uid = userDao.insert(new User());
-            if (uid <= 0) {
-                modelMap.addAttribute("message", "数据库错误");
-                return "register";
-            } else {
-                session.setAttribute("user", user);
-                return "redirect:/index";
-            }
+                                 @RequestParam("industryClub") int industryClub,
+                                 @RequestParam("specialCommittee") int specialCommittee
+    ) {        User user = new User(5,username, password, name, sex, birth,homeAddress,telephone,recommender,industryClub, specialCommittee,0);
+            return "redirect:/index";
         }
     }
-}
+

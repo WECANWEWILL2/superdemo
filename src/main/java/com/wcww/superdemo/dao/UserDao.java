@@ -17,9 +17,9 @@ public interface UserDao {
     @Select(value="Select * From User Where username=#{username} and password=#{password}")
     public User selectLogin(User user);//用户登录
 
-    @Insert("Insert Into user(username,password,name,sex," +
+    @Insert("Insert Into User(username,password,name,sex," +
             "birth,homeAddress,telephone,recommender,industryClub,specialCommittee) " +
-            "values (#{username},#{username},#{password},#{name},#{sex},#{birth},#{homeAddress},#{telephone},#{recommender},#{industryClub},#{specialCommittee)")
+            "values (#{username},#{username},#{password},#{name},#{sex},#{birth},#{homeAddress},#{telephone},#{recommender},#{industryClub},#{specialCommittee};")
     @Options(useGeneratedKeys = true, keyProperty = "uid")
     int insert(User user);
 }
