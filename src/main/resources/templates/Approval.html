@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript"
+
+            src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        //checkbox 全选/取消全选
+        var isCheckAll = false;
+        function swapCheck() {
+            if (isCheckAll) {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = false;
+                });
+                isCheckAll = false;
+            } else {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = true;
+                });
+                isCheckAll = true;
+            }}
+    </script>
+    <meta charset="UTF-8">
+    <title>wojiubuxinle</title>
+
+</head>
+<body style="background: white">>
+<div class="container" style="max-width: 800px;margin-top: 140px">
+    <form>
+
+        <div class="form-group" >
+            <h1 class="bd-title" id="content"style=" text-align:center;">能力规范文稿管理系统</h1>
+            <div style="float:right; text-align:right">用户：hsy<button type="button" class="btn btn-default btn-group-sm">注销</button></div>
+            <br>
+        </div>
+        <hr/>
+        <div class="container"style="text-align:center">
+            <table margin="auto" class="table table-bordered">
+                <tr>
+
+                    <th >写者</th>
+                    <th>管理者</th>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="panel panel-default">
+            <p> <div class="panel-heading">提案审批</div></p>
+            <div class="panel-body">
+                <div class="bs-example" data-example-id="simple-table">
+                    <table class="table">
+                        <div class>
+
+                            <button class="btn btn-default" type="button">推荐（专委会）</button>
+                            <button class="btn btn-default" type="button">备案（行业分会）</button>
+                            <button class="btn btn-default" type="button">立案（研究会）</button>
+
+                        </div><!-- /input-group -->
+
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" onclick="swapCheck()"name="choose" value="choose?" />
+                                全选</th>
+                            <th>编号</th>
+                            <th>提案名称</th>
+                            <th>提案人</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="choose" value="choose?" /></td>
+                            <td>1</td>
+                            <th>名称</th>
+                            <td>姓名</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="choose" value="choose?" /></td>
+                            <td>2</td>
+                            <th>名称</th>
+                            <td>姓名</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="choose" value="choose?" /></td>
+                            <td>3</td>
+                            <th>名称</th>
+                            <td>姓名</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style = "text-align:left;">
+                    <input type = "button" class="btn btn-default"value = "推荐" />
+                </div>
+            </div>
+        </div>
+
+
+
+    </form>
+</div>
+</body>
+</html>

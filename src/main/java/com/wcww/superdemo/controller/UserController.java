@@ -2,6 +2,7 @@ package com.wcww.superdemo.controller;
 
 import com.wcww.superdemo.dao.UserDao;
 import com.wcww.superdemo.entity.User;
+import com.wcww.superdemo.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,18 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserController {
+
+    @Autowired
+    private UserService userService;
+
     @Autowired
     private UserDao userDao;
 
     @RequestMapping(path = "/user/login", method = RequestMethod.GET)
-    public String login() {
+    public String login(@RequestParam(value = "notlogin", required = false) String notlogin,ModelMap modelMap) {
+        if(notlogin!=null){
+            modelMap.addAttribute("err_msg","未登录");
+        }
         return "login";
     }
 
@@ -56,14 +64,21 @@ public class UserController {
                                  @RequestParam("password") String password,
                                  @RequestParam("name") String name,
                                  @RequestParam("sex") String sex,
-                                 @RequestParam("birth") int birth,
+                                 @RequestParam("birth") String birth,
                                  @RequestParam("homeAddress") String homeAddress,
                                  @RequestParam("telephone") int telephone,
                                  @RequestParam("recommender") String recommender,
                                  @RequestParam("industryClub") int industryClub,
                                  @RequestParam("specialCommittee") int specialCommittee
-    ) {        User user = new User(5,username, password, name, sex, birth,homeAddress,telephone,recommender,industryClub, specialCommittee,0);
+    ) {
+        User user = new User(username, password, name, sex, birth, homeAddress, telephone, recommender, industryClub, specialCommittee);
+        String msg = userService.signUp(user);
+        if (msg == null) {
             return "redirect:/index";
+        } else {
+            modelMap.addAttribute("err_msg", msg);
+            return "username";
         }
     }
+}
 

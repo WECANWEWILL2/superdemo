@@ -24,8 +24,8 @@
         <input name="username" class="form-control mr-sm-2" type="text" placeholder="用户名">
         <input name="password" class="form-control mr-sm-2" type="password" placeholder="密码">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">登录</button>
-        <div th:if="${message!=null}">
-            <a th:text="${message}"></a>
+        <div th:if="${err_msg!=null}">
+            <a th:text="${err_msg}"></a>
         </div>
         <a href="/user/signup" class="btn btn-outline-success my-2 my-sm-0" type="submit">注册</a>
     </form>

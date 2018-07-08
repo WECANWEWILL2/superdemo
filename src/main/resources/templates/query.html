@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<script>
+    $(document).ready(function() {
+        $("button").addClass("animated bounce");
+    });
+</script>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<style>
+    .main{
+        text-align: center; /*让div内部文字居中*/
+        background-color: #fff;
+        border-radius: 20px;
+        width: 300px;
+        height: 350px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+</style>
+<head>
+    <title>Sample</title>
+</head>
+<body>
+<div class = "main container-fluid" >
+    <h1 th:inline="text">能力规范文稿管理系统</h1> <br/>
+    <a href = "http://localhost:8080/Login" >注销</a>
+    <h2> 写者    |    管理</h2>
+        <p>提案列表</p>
+        <table border="10" class = "dataintable">
+            <tr>
+                <th><label><input type="checkbox" name="#"> 全选</label></th>
+                <th>编号</th>
+                <th>提案名称</th>
+                <th>作者</th>
+                <th>截止日期</th>
+                <th>状态</th>
+                <th>附议数</th>
+                <th>反对数</th>
+            </tr>
+            <tr>
+                <td><label><input type="checkbox" name="#"></label></td>
+                <td></td>
+                <td><a href = "http://localhost:8080/details" >xxxxxxxx</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label><input type="checkbox" name="#"></label></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <form action = "#">
+
+            <button class = "btn-primary" type = "submit"> 打印 </button>
+            <button class = "btn-danger" type = "submit"> 撤销 </button> <br/>
+            <a href = "http://localhost:8080/compile" >提案编制</a> <br/>
+            <a href = "http://localhost:8080/maintain" >信息维护</a>
+        </form>
+
+</div>
+</body>
+</html>

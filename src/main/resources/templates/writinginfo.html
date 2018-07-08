@@ -13,24 +13,49 @@
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+
     <title>提案编制</title>
 </head>
-<style type="text/css">
-    body,p{margin: 20%;}
-</style>
 
 
-<body class="text-center">
-<form >
-    <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-lg">提案编制</span>
+<body style="background: white">
+<div class="container" style="max-width: 800px;margin-top: 140px">
+    <form>
+    <div class="form-group"  >
+        <h1 class="bd-title" id="content"style=" text-align:center;">能力规范文稿管理系统</h1>
+        <div style="float:right; text-align:right">用户：hsy<button type="button" class="btn btn-default btn-group-sm">注销</button></div>
+        <br>
+    </div>
+    <hr/>
+    <div class="container"style="text-align:center">
+        <table margin="auto" class="table table-bordered">
+            <tr>
+
+                <th >写者</th>
+                <th>管理者</th>
+            </tr>
+        </table>
+    </div>
+    <div class="input-group input-group-lg"><br>
+        <div class="input-group">
+
+            <button class="btn btn-default" type="button">提案名称</button>
+            <span class="input-group-btn">
+        <input type="text" class="form-control" style="width:680px"placeholder="输入姓名" >
+            </span>
+<p>
+
+        <div class="form-group">
+            <br>
+            <label for="exampleFormControlTextarea1"><strong>提案内容</strong></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" style=width:800px;height:200px;></textarea>
         </div>
-        <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+        </p>
+    </div>
+        <button onclick="window.print()">打印</button>
+        <input type="reset" class="btn btn-default" value="清空">
 
-
-
-</form>
-
+</div></form>
+</div>
 </body>
 </html>

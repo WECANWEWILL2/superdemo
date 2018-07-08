@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String name;
     private String sex;
-    private int birth;
+    private String birth;
     private String homeAddress;
     private int telephone;
     private String recommender;
@@ -20,18 +20,17 @@ public class User {
     public User() {
 
     }
-    public User(int uid,
+    public User(
              String username,
              String password,
              String name,
              String sex,
-             int birth,
+             String birth,
              String homeAddress,
              int telephone,
              String recommender,
              int industryClub,
-             int specialCommittee,
-             int extraInfo){
+             int specialCommittee){
         this.username=username;
         this.password=password;
         this.name=name;
@@ -42,7 +41,6 @@ public class User {
         this.recommender=recommender;
         this.industryClub=industryClub;
         this.specialCommittee=specialCommittee;
-        this.extraInfo=extraInfo;
 
     }
 
